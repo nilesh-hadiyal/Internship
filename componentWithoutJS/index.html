@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Component Without JS</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <input type="checkbox" id="theme" />
+    <div class="page">
+      <header class="navbar">
+        <h2>NH</h2>
+
+        <div class="nav-action">
+          <div class="dropdown">
+            <button class="dropdown-btn">
+              Dashboard
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+
+            <div class="dropdown-menu">
+              <a href="#">Profile</a>
+              <a href="#">Analytics</a>
+              <a href="#">Settings</a>
+              <a href="#">Logout</a>
+            </div>
+          </div>
+
+          <label for="theme" class="theme-btn">
+            <i class="fa-solid fa-moon"></i>
+          </label>
+        </div>
+      </header>
+
+      <main class="container">
+        <section class="left-panel">
+          <div class="card tabs">
+            <input type="radio" name="tabs" id="tab1" checked />
+            <input type="radio" name="tabs" id="tab2" />
+            <input type="radio" name="tabs" id="tab3" />
+
+            <div class="tab-labels">
+              <label for="tab1">Overview</label>
+              <label for="tab2">Projects</label>
+              <label for="tab3">Team</label>
+            </div>
+
+            <div class="tab-content content1">
+              <h3>Overview</h3>
+
+              <p>
+                Professional custom JavaScript components with smooth animations
+                and reusable architecture.
+              </p>
+            </div>
+
+            <div class="tab-content content2">
+              <h3>Projects</h3>
+
+              <p>
+                Build reusable UI libraries without using Bootstrap JS or
+                jQuery.
+              </p>
+            </div>
+
+            <div class="tab-content content3">
+              <h3>Team</h3>
+
+              <p>
+                Create scalable frontend systems using pure JavaScript
+                components.
+              </p>
+            </div>
+          </div>
+
+          <!-- Accordion -->
+          <div class="accordion card">
+            <input type="radio" name="accordion" id="item1" checked />
+
+            <label for="item1" class="accordion-header">
+              How are You?
+              <i class="fa-solid fa-plus"></i>
+            </label>
+
+            <div class="accordion-content">
+              <p>I am Good. How about You?</p>
+            </div>
+
+            <input type="radio" name="accordion" id="item2" />
+
+            <label for="item2" class="accordion-header">
+              What`s today plan?
+              <i class="fa-solid fa-plus"></i>
+            </label>
+
+            <div class="accordion-content">
+              <p>Today`s plan is going to job.</p>
+            </div>
+
+            <input type="radio" name="accordion" id="item3" />
+
+            <label for="item3" class="accordion-header">
+              What`s work in job?
+              <i class="fa-solid fa-plus"></i>
+            </label>
+
+            <div class="accordion-content">
+              <p>In this job I am working Frontend Development.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="right-panel">
+          <!-- Tooltip -->
+          <div class="card">
+            <h2 class="section-title">Smart Tooltips</h2>
+
+            <div class="tooltip-wrapper">
+              <button class="tooltip-btn">
+                <i class="fa-solid fa-user-pen"></i>
+
+                <span class="tooltip-text">Edit Profile</span>
+              </button>
+
+              <button class="tooltip-btn">
+                <i class="fa-solid fa-bell"></i>
+
+                <span class="tooltip-text">Notifications</span>
+              </button>
+
+              <button class="tooltip-btn">
+                <i class="fa-solid fa-gear"></i>
+
+                <span class="tooltip-text">Settings</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Modal -->
+          <div class="card">
+            <h2 class="section-title">Custom Modal</h2>
+
+            <a href="#modal" class="primary-btn">Read More</a>
+          </div>
+        </section>
+      </main>
+
+      <!-- Modal -->
+      <div class="modal-overlay" id="modal">
+        <div class="modal-box">
+          <a href="#" class="close-modal">
+            <i class="fa-solid fa-xmark"></i>
+          </a>
+
+          <h2>Nilesh Hadiyal</h2>
+
+          <p>
+            My name is Nilesh. I from Surendranagar. I am currently studying
+            Bachelor of Engineering in Computer Science and Engineering at
+            Vishwakarma Government Engineering College, Ahmedabad.
+          </p>
+
+          <a href="#" class="primary-btn">Continue</a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
