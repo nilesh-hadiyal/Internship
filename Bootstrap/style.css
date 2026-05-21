@@ -85,6 +85,10 @@ form:hover {
   .card-body {
     padding: 15px;
   }
+  .card img {
+    min-width: 40%;
+    max-height: 139px;
+  }
 
   .social-link {
     line-height: 2.5rem;
