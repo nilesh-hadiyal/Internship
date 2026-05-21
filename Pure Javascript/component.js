@@ -17,55 +17,67 @@ const themeToggle = document.getElementById("themeToggle");
 
 themeToggle.addEventListener("click", () => {
   document.body.classList.toggle("light");
-
-})
+});
 
 // Tabs
+const tabsContainer = document.querySelector(".tabs");
 const tabButtons = document.querySelectorAll(".tab-btn");
 const tabContents = document.querySelectorAll(".tab-content");
 
-tabButtons.forEach((button) => {
-  button.addEventListener("click", () => {
-    const tab = button.dataset.tab;
+tabsContainer.addEventListener("click", (e) => {
+  const button = e.target.closest(".tab-btn");
 
-    tabButtons.forEach((btn) => btn.classList.remove("active"));
-    tabContents.forEach((content) => content.classList.remove("active"));
+  if (!button) return;
 
-    button.classList.add("active");
-    document.getElementById(tab).classList.add("active");
-  });
+  const tab = button.dataset.tab;
+
+  tabButtons.forEach((btn) => btn.classList.remove("active"));
+  tabContents.forEach((content) => content.classList.remove("active"));
+
+  button.classList.add("active");
+  document.getElementById(tab).classList.add("active");
 });
 
 // Accordion
-const accordionHeaders = document.querySelectorAll(".accordion-header");
+const accordion = document.querySelector(".accordion");
 const accordionContents = document.querySelectorAll(".accordion-content");
 
-accordionHeaders.forEach((header) => {
-  header.addEventListener("click", () => {
-    const content = header.nextElementSibling;
+accordion.addEventListener("click", (e) => {
+  const header = e.target.closest(".accordion-header");
 
-    accordionContents.forEach((accordionContent) => accordionContent.classList.remove("active"));
+  if (!header) return;
 
-    content.classList.add("active");
+  const content = header.nextElementSibling;
+
+  accordionContents.forEach((item) => {
+    item.classList.remove("active");
   });
+
+  content.classList.add("active");
 });
 
 // Tooltip
 const tooltip = document.getElementById("tooltip");
-const tooltipButtons = document.querySelectorAll(".tooltip-btn");
 
-tooltipButtons.forEach((button) => {
-  button.addEventListener("mousemove", (e) => {
-    tooltip.innerText = button.dataset.tooltip;
+document.addEventListener("mousemove", (e) => {
+  const button = e.target.closest(".tooltip-btn");
 
-    tooltip.style.opacity = "1";
-    tooltip.style.left = e.pageX + 0 + "px";
-    tooltip.style.top = e.pageY - 40 + "px";
-  });
-
-  button.addEventListener("mouseleave", () => {
+  if (!button) {
     tooltip.style.opacity = "0";
-  });
+    return;
+  }
+
+  tooltip.innerText = button.dataset.tooltip;
+
+  tooltip.style.opacity = "1";
+  tooltip.style.left = e.pageX + "px";
+  tooltip.style.top = e.pageY - 40 + "px";
+});
+
+document.addEventListener("mouseout", (e) => {
+  if (e.target.closest(".tooltip-btn")) {
+    tooltip.style.opacity = "0";
+  }
 });
 
 // Model
@@ -74,9 +86,9 @@ const openModal = document.getElementById("openModal");
 const closeModal = document.getElementById("closeModal");
 
 openModal.addEventListener("click", () => {
-  modal.classList.add("show")
+  modal.classList.add("show");
 });
 
 closeModal.addEventListener("click", () => {
   modal.classList.remove("show");
-})
+});
