@@ -12,617 +12,554 @@
   --summary-color: rgb(22, 140, 176);
   --tablehover-color: rgb(87, 221, 241);
 }
+
+/*GLOBAL*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 html {
   scroll-behavior: smooth;
   font-size: 16px;
 }
+
 body {
   background-color: var(--body-color);
+  overflow-x: hidden;
+  font-family: Arial, sans-serif;
 }
-header {
-  display: flex;
-  justify-content: space-between;
-  background-color: var(--navbar-color);
-  min-height: 100px;
-  position: sticky;
-  width: fit-content;
-  top: 0;
-  z-index: 1;
-  padding: 10px;
-}
+
 section {
+  padding: 40px 20px;
   scroll-margin-top: 100px;
 }
-nav {
-  margin-top: 30px;
+
+img {
+  max-width: 100%;
+  height: auto;
 }
+
+/*HEADER*/
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 15px 30px;
+  background-color: var(--navbar-color);
+}
+
+header img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+}
+
+nav {
+  display: flex;
+  gap: 20px;
+}
+
 nav a {
   text-decoration: none;
-  font-size: 1.56rem;
-  padding: 10px;
-  margin-left: 142px;
+  font-size: 1.1rem;
   color: var(--black);
+  padding: 10px 15px;
+  transition: 0.3s;
 }
+
 nav a:hover {
   background-color: var(--white);
   border-radius: 25px;
   box-shadow: 2px 2px 5px var(--black);
 }
+
 #menu-toggle {
   display: none;
-  font-size: 1.56rem;
+  font-size: 2rem;
   cursor: pointer;
 }
-img {
-  width: 70px;
-  height: 70px;
-  border-radius: 50%;
-  margin-top: 12px;
-  margin-left: 12px;
-}
+
+/*HEADINGS*/
 h2 {
-  font-size: 3.8rem;
+  text-align: center;
+  font-size: 3rem;
   color: var(--text-color);
   text-shadow: 3px 3px 6px var(--text-color);
+  margin-bottom: 40px;
   animation: changecolor 3s infinite;
-  margin-top: 100px;
 }
 
-/* About CSS */
-.profile {
-  display: flex;
-  justify-content: space-around;
-  margin-top: 40px;
-}
-.profile-img {
-  height: 600px;
-  width: 600px;
-  margin-left: 150px;
-  box-shadow: 3px 3px 6px var(--black);
-}
-.profile-name {
-  margin-left: 200px;
-  margin-top: 30px;
-  font-size: 4.5rem;
-  color: var(--profile-color);
-  font-family:
-    "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans",
-    Arial, sans-serif;
-  text-shadow: 2px 2px 5px var(--profile-color);
-  animation: changecolor 3s infinite;
-}
 @keyframes changecolor {
-  form {
+  from {
     color: var(--profile-color);
     text-shadow: 2px 2px 5px var(--profile-color);
   }
+
   to {
     color: var(--shadow-color);
     text-shadow: 2px 2px 5px var(--shadow-color);
   }
 }
-.summary {
+
+/* ABOUT SECTION */
+.profile {
   display: flex;
-  flex-direction: column;
-  font-size: 2rem;
-  margin: 80px 200px 0px 100px;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  flex-wrap: wrap;
 }
+
+.profile-img {
+  width: 100%;
+  max-width: 450px;
+  border-radius: 20px;
+  box-shadow: 3px 3px 6px var(--black);
+}
+
+.profile-name {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 3.5rem;
+  color: var(--profile-color);
+  text-shadow: 2px 2px 5px var(--profile-color);
+  animation: changecolor 3s infinite;
+}
+
+.summary {
+  max-width: 700px;
+  font-size: 1.3rem;
+  line-height: 1.8;
+}
+
 .summary p {
+  margin-bottom: 20px;
   animation: summarycolor 5s infinite;
 }
+
 @keyframes summarycolor {
   from {
     color: var(--text-color);
     text-shadow: 2px 2px 5px var(--text-color);
   }
+
   to {
     color: var(--summary-color);
     text-shadow: 2px 2px 5px var(--summary-color);
   }
 }
+
 .source {
   display: flex;
-  margin-top: 60px;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 30px;
 }
+
 .source a {
   text-decoration: none;
-  padding: 20px;
+  padding: 15px 20px;
   color: var(--button-color);
-  margin-left: 25px;
   background-color: var(--navbar-color);
   border-radius: 22px;
+  transition: 0.3s;
 }
+
 .source a:hover {
-  border-radius: 25px;
   box-shadow: 2px 2px 5px var(--black);
 }
 
-/* Education CSS */
+/*EDUCATION*/
 #education {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
 }
+
 .table-container {
   width: 100%;
+  overflow-x: auto;
 }
+
 table {
-  margin: 10px 200px;
+  width: 100%;
+  border-collapse: collapse;
+  background-color: var(--background-color);
 }
-td,
-th {
-  padding: 25px;
+
+th,
+td {
+  padding: 14px;
   background-color: var(--background-color);
   color: var(--cardtext-color);
-  font-size: 1.56rem;
+  font-size: 1rem;
   border: 2px solid var(--black);
-  border-radius: 12px;
+  text-align: center;
 }
+
 td:hover,
 th:hover {
-  transform: scale(1.01);
   background-color: var(--tablehover-color);
 }
 
-/* Skill CSS */
+/*SKILLS*/
 #skills {
-  scroll-margin-top: 160px;
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
 }
-.skills {
-  text-align: center;
-}
+
 .skill {
   display: flex;
-  flex-direction: row;
+  gap: 20px;
+  flex-wrap: wrap;
   justify-content: center;
-  font-size: 2rem;
 }
-.techskill {
-  min-width: 45px;
-}
-.coresubject {
-  min-width: 500px;
-}
+
 .techskill,
 .coresubject {
-  padding: 55px;
-  margin: 20px;
+  flex: 1 1;
+  max-width: 550px;
   background-color: var(--background-color);
-  border-radius: 30px;
+  padding: 25px;
+  border-radius: 25px;
   box-shadow: 3px 3px 6px var(--background-color);
   color: var(--cardtext-color);
+  transition: 0.3s;
 }
+
 .techskill:hover,
 .coresubject:hover {
   transform: scale(1.01);
   box-shadow: 2px 2px 5px var(--profile-color);
 }
 
-/* Project CSS */
+.techskill h3,
+.coresubject h3 {
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+}
+
+.techskill ul,
+.coresubject ul {
+  padding-left: 20px;
+}
+
+.techskill li,
+.coresubject li {
+  margin-bottom: 10px;
+  line-height: 1.5;
+  font-size: 1rem;
+}
+
+/*PROJECTS*/
 #projects {
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-size: 1.56rem;
 }
+
 .project {
-  padding: 10px 90px;
-  margin: 20px 200px;
+  width: 100%;
+  max-width: 1200px;
   background-color: var(--background-color);
-  border-radius: 30px;
+  padding: 30px;
+  margin-bottom: 30px;
+  border-radius: 25px;
   box-shadow: 3px 3px 6px var(--background-color);
   color: var(--cardtext-color);
+  transition: 0.3s;
 }
-.project-name {
-  display: flex;
-  justify-content: space-between;
-}
-.project-name a {
-  text-decoration: none;
-  color: var(--cardtext-color);
-  margin-top: 40px;
-}
+
 .project:hover {
   transform: scale(1.01);
   box-shadow: 2px 2px 5px var(--profile-color);
 }
 
-/* Experience CSS, Language CSS & Acitivites CSS*/
-.experience,
-.activites-info {
-  margin: 20px 20px;
+.project-name {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
 }
+
+.project-name a {
+  color: var(--cardtext-color);
+  font-size: 1.5rem;
+}
+
+.project ul {
+  padding-left: 20px;
+  margin-top: 15px;
+}
+
+.project li {
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+/*EXPERIENCE / LANGUAGE*/
+
 .experience,
 #language,
 #activites {
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-size: 2rem;
 }
+
 .experience-info,
 .language-info,
 .activites-info {
-  padding: 10px 90px;
+  width: 100%;
+  max-width: 1200px;
   background-color: var(--background-color);
-  border-radius: 30px;
+  padding: 30px;
+  border-radius: 25px;
   box-shadow: 3px 3px 6px var(--background-color);
   color: var(--cardtext-color);
+  transition: 0.3s;
 }
+
 .experience-info:hover,
 .language-info:hover,
 .activites-info:hover {
   transform: scale(1.01);
   box-shadow: 2px 2px 5px var(--profile-color);
 }
-#activites {
-  font-size: 2rem;
-  margin: 0px;
-}
+
+.experience-info ul,
+.language-info,
 .activites-info {
-  margin: 0px 200px;
+  margin-top: 15px;
+  line-height: 1.8;
 }
 
-/* Contact CSS */
+/*CONTACT*/
 #contact {
+  width: 100%;
+  padding: 40px 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+
 .contact-info {
+  width: 100%;
+  max-width: 650px;
   display: flex;
   flex-direction: column;
+  gap: 18px;
+  padding: 30px;
+  background-color: var(--white);
+  border-radius: 20px;
   border: 2px solid var(--black);
-  border-radius: 12px;
-  padding: 14px;
-  width: fit-content;
-  font-size: 1.25rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: 0.3s;
 }
+
 .contact-info:hover {
-  transform: scale(1.05);
-  box-shadow: 3px 3px 6px var(--black);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
 }
+
+/* INPUTS */
 .contact-info input,
-textarea,
-button,
-label {
-  padding: 10px;
-  margin: 10px;
-}
-
-button {
-  width: fit-content;
-  margin-left: 160px;
-  background-color: var(--button-color);
+.contact-info textarea {
+  width: 100%;
+  padding: 14px 16px;
+  font-size: 1rem;
+  border: 2px solid #ccc;
   border-radius: 12px;
+  outline: none;
+  transition: 0.3s;
+}
+
+.contact-info input:focus,
+.contact-info textarea:focus {
+  border-color: var(--text-color);
+  box-shadow: 0 0 8px rgba(4, 189, 245, 0.3);
+}
+
+.contact-info textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+/* CHECKBOX */
+.checkbox {
+  display: flex;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+.checkbox label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  font-size: 1rem;
+  color: var(--cardtext-color);
+}
+
+/* BUTTON */
+.contact-info button {
+  align-self: center;
+  padding: 12px 30px;
+  font-size: 1rem;
+  font-weight: bold;
+  background-color: var(--button-color);
   border: 2px solid var(--black);
-}
-button:hover {
-  transform: scale(1.1);
-  box-shadow: 2px 2px 5px var(--black);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
+.contact-info button:hover {
+  transform: scale(1.05);
+  box-shadow: 2px 2px 8px var(--black);
+}
+
+/* FOOTER */
 footer {
-  text-align: center;
   background-color: var(--navbar-color);
-  margin-top: 30px;
-}
-.footer-info {
-  padding: 5px;
-  font-size: 1.56rem;
+  text-align: center;
+  margin-top: 40px;
 }
 
-@media (max-width: 480px) {
+.footer-info {
+  padding: 15px;
+  font-size: 1.2rem;
+}
+
+/*MOBILE*/
+
+@media (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+
   header {
-    position: sticky;
-    top: 0;
-    display: flex;
-    width: 1200px;
-    height: 150px;
+    flex-wrap: wrap;
   }
-  h2 {
-    font-size: 100px;
+
+  #menu-toggle {
+    display: block;
   }
-  img {
-    width: 150px;
-    height: 150px;
-    margin-top: 0px;
-  }
+
   .navbar {
     display: none;
     flex-direction: column;
-    text-align: center;
-    background-color: var(--navbar-color);
-    position: absolute;
-    top: 130px;
-    right: 0;
     width: 100%;
-    padding: 20px;
+    margin-top: 15px;
+    background-color: var(--navbar-color);
   }
+
   .navbar.active {
     display: flex;
   }
-  #menu-toggle {
-    display: block;
-    font-size: 120px;
-    margin: 10px 40px;
-  }
+
   nav a {
-    margin: 20px;
-    font-size: 50px;
+    text-align: center;
+    width: 100%;
   }
+
   .profile {
-    display: inline-block;
+    flex-direction: column;
+    text-align: center;
   }
-  .profile-img {
-    margin-left: 300px;
-  }
+
   .profile-name {
-    font-size: 90px;
-    margin: 20px 0 0 350px;
+    font-size: 2.5rem;
   }
+
   .summary {
-    margin-top: 20px;
-    font-size: 50px;
-    width: 1100px;
-    margin-left: 60px;
-    margin-right: 10px;
+    font-size: 1rem;
+    padding: 0 10px;
   }
-  .source {
-    margin-top: 20px;
+
+  h2 {
+    font-size: 2.2rem;
   }
-  .table-container {
-    overflow-x: auto;
-  }
+
   .skill {
     flex-direction: column;
   }
-  .techskill,
-  .coresubject {
-    padding: 15px 40px;
+
+  .project-name {
+    flex-direction: column;
+    gap: 10px;
   }
-  .project {
-    padding: 10px 30px;
-    margin: 20px 25px;
+
+  #contact {
+    padding: 30px 15px;
   }
-  .experience-info,
-  .activites-info {
-    padding: 10px 30px;
+
+  .contact-info {
+    padding: 20px;
+    gap: 15px;
   }
-  footer {
-    position: relative;
-    bottom: 0;
+
+  .contact-info input,
+  .contact-info textarea {
+    font-size: 0.95rem;
+    padding: 12px;
   }
-  .skill,
-  #projects,
-  .experience,
-  .language-info,
-  .activites-info {
-    font-size: 40px;
+
+  .checkbox label {
+    font-size: 0.95rem;
   }
-  #education,
-  #projects,
-  #skills,
-  #experience,
-  #language,
-  #activites,
-  #contact,
-  footer {
-    width: 1170px;
-    margin: 40px 20px 0px 20px;
+
+  .contact-info button {
+    width: 100%;
+    padding: 14px;
+  }
+}
+
+/*TABLET*/
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .profile {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .summary {
+    max-width: 90%;
+  }
+
+  .skill {
+    flex-direction: column;
+  }
+
+  nav {
+    gap: 10px;
+  }
+
+  nav a {
+    font-size: 1rem;
+    padding: 8px;
   }
   .contact-info {
-    width: 1100px;
-  }
-  .education {
-    margin: 0px 20px 0px 20px;
-    width: 250px;
-  }
-  #contact button {
-    margin-left: 500px;
-  }
-  th,
-  td {
-    font-size: 50px;
-    padding: 20px;
-  }
-  .activites-info {
-    margin: 0px 30px;
-  }
-  .table-education {
-    min-width: 600px;
-  }
-  .table-school {
-    min-width: 1000px;
-  }
-  .table-board,
-  .table-year,
-  .table-percentage {
-    min-width: 400px !important;
+    max-width: 750px;
   }
 }
-@media (min-width: 480px) and (max-width: 780px) {
-  header {
-    display: flex;
-  }
-  .navbar {
-    display: flex;
-  }
-  nav a {
-    margin: -10px 0px 20px 57px;
-    padding: 15px;
+
+/*LARGE SCREENS*/
+
+@media (min-width: 1400px) {
+  .summary {
+    font-size: 1.5rem;
   }
 
-  .profile {
-    display: inline-block;
-  }
-  .profile-img {
-    margin-left: 350px;
-  }
   .profile-name {
-    font-size: 90px;
-    margin: 20px 0 0 350px;
-  }
-  .summary {
-    margin-top: 20px;
-    font-size: 40px;
-    width: 1100px;
-    margin-right: 10px;
-  }
-  .source {
-    margin-top: 20px;
-  }
-  .skill {
-    flex-direction: column;
-  }
-  .project {
-    padding: 10px 30px;
-    margin: 20px 25px;
-  }
-  .skill,
-  #projects,
-  .experience,
-  .language-info,
-  .activites-info {
-    font-size: 30px;
-  }
-  .activites-info {
-    margin: 0px 12px;
-  }
-  .experience-info,
-  .activites-info {
-    padding: 10px 30px;
-  }
-  #education,
-  #projects,
-  #skills,
-  #experience,
-  #language,
-  #activites,
-  #contact,
-  footer {
-    width: 1150px;
-    margin: 40px 20px 0px 70px;
-  }
-  .education {
-    margin: 0px 20px 0px 20px;
-    width: 1100px;
-  }
-}
-@media (min-width: 781px) and (max-width: 1200px) {
-  header {
-    display: flex;
-    align-items: center;
-  }
-  .navbar {
-    display: flex;
-  }
-  .navbar a {
-    margin-left: 67px;
-    padding-top: 10px;
-    margin-top: -25px;
-  }
-  .profile-img {
-    margin-left: 100px;
-    height: 500px;
-    width: 500px;
-  }
-  .profile-name {
-    font-size: 55px;
-    margin: 50px 0 0 160px;
-  }
-
-  .summary {
-    margin-top: 15px;
-    font-size: 30px;
-  }
-  .source {
-    margin-top: 30px;
-  }
-  .source a {
-    padding: 20px;
-    margin-left: 0px;
-    width: max-content;
-  }
-  .project {
-    padding: 10px 90px;
-    margin: 20px 25px;
-  }
-  .skill,
-  #projects,
-  .experience,
-  .language-info,
-  .activites-info {
-    font-size: 30px;
-  }
-  .coresubject {
-    min-width: 450px;
-  }
-  #education,
-  #projects,
-  #skills,
-  #experience,
-  #language,
-  #activites,
-  #contact {
-    width: 1200px;
-    margin: 0px 30px 0px 40px;
-  }
-  footer {
-    width: 1290px;
-  }
-  #contact {
-    margin-bottom: 20px;
-  }
-  .education {
-    width: 1160px;
-    margin-left: 20px;
-  }
-  .activites-info {
-    margin: 0px 30px;
-  }
-}
-@media (min-width: 1200px) and (max-width: 1800px) {
-  header {
-    display: flex;
-  }
-  .navbar {
-    display: flex;
-  }
-  nav a {
-    margin-bottom: 30px;
-    padding: 15px;
-    margin-left: 135px;
-  }
-  .profile {
-    display: inline-flex;
-    width: max-content;
-  }
-  .profile-img {
-    margin-left: 200px;
-  }
-  .profile-name {
-    font-size: 70px;
-    margin: 50px 0 0 280px;
-  }
-  .summary {
-    width: 750px;
-  }
-  .source {
-    margin-top: 70px;
-  }
-  #education,
-  #projects,
-  #skills,
-  #experience,
-  #language,
-  #activites,
-  #contact,
-  footer {
-    width: 1800px;
-  }
-  .activites-info {
-    margin: 0px 200px;
+    font-size: 4rem;
   }
 }
