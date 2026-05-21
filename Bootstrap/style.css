@@ -1,0 +1,125 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  overflow-x: hidden;
+  max-width: 100%;
+  padding-top: 76px;
+}
+html {
+  scroll-behavior: smooth;
+}
+header {
+  overflow: hidden;
+}
+section {
+  scroll-margin-top: 30px;
+}
+h2 {
+  font-family: "Dancing Script", cursive;
+  font-size: 4rem;
+}
+img {
+  image-rendering: pixelated;
+}
+.navbar {
+  z-index: 1030;
+}
+.carousel-item img {
+  width: 100%;
+  height: 80vh;
+}
+.card:hover,
+form:hover {
+  border: 2px solid blue !important;
+}
+.card img {
+  min-width: 40%;
+  max-height: 250px;
+}
+.footer-links li {
+  margin-bottom: 16px;
+}
+.footer-links li a,
+.social-link a {
+  text-decoration: none;
+  color: white;
+}
+.social-link a {
+  padding: 0px 20px;
+}
+.social-link a i:hover {
+  color: blue;
+}
+#reviews img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+}
+
+@media (max-width: 576px) {
+  body {
+    padding-top: 60px;
+  }
+  h2 {
+    font-size: 2rem;
+  }
+  section {
+    scroll-margin-top: 20px;
+  }
+  .carousel-item img {
+    height: 30vh;
+  }
+
+  .navbar-brand {
+    font-size: 1.6rem !important;
+  }
+
+  .card .btn,
+  form .btn {
+    width: 100%;
+  }
+
+  .card-body {
+    padding: 15px;
+  }
+
+  .social-link {
+    line-height: 2.5rem;
+  }
+
+  .social-link a {
+    display: inline-block;
+    margin: 5px 0;
+  }
+
+  .footer-description {
+    font-size: 14px;
+  }
+
+  .company-logo {
+    font-size: 2rem;
+  }
+
+  .form-label {
+    font-size: 1.2rem !important;
+  }
+  #teams img {
+    margin: 16px !important;
+  }
+  .footer-text {
+    font-size: 16px !important;
+    padding: 0px 0px !important;
+  }
+}
+
+@media (max-width: 991px) {
+  h2 {
+    font-size: 3.5rem;
+  }
+  #teams img {
+    margin: 24px !important;
+  }
+}
