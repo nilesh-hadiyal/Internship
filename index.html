@@ -1,27 +1,48 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Comman File</title>
-  <style>
-    a {
-      text-decoration: none;
-      font-size: 2rem;
-      padding: 20px;
-    }
-    a:hover {
-      color: black;
-  
-    }
-  </style>
-</head>
-<body>
-  <a href="./Bootstrap/index.html">Bootstrap</a>
-  <a href="./Form/index.html">Form</a>
-  <a href="./Practice/index.html">portfolio</a>
-  <a href="./Pure Javascript/index.html">Custom Javascript</a>
-  <a href="./Table/index.html">Table</a>
-  <a href="./componentWithoutJS/index.html">Custom Component without JS</a>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Comman File</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        background-color: rgb(254, 252, 252);
+      }
+      .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 100px;
+      }
+      a {
+        text-decoration: none;
+        min-width: 400px;
+        text-align: center;
+        font-size: 2rem;
+        padding: 20px;
+        border: 2px solid black;
+        border-radius: 15px;
+        margin: 10px;
+      }
+      a:hover {
+        background: rgb(177, 177, 177);
+        color: black;
+        box-shadow: 2px 2px 5px black;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <a href="./Bootstrap/index.html">Bootstrap</a>
+      <a href="./Form/index.html">Form</a>
+      <a href="./Practice/index.html">portfolio</a>
+      <a href="./Pure Javascript/index.html">Custom Javascript</a>
+      <a href="./Table/index.html">Table</a>
+      <a href="./componentWithoutJS/index.html">Custom Component without JS</a>
+    </div>
+  </body>
 </html>
